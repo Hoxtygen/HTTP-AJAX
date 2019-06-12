@@ -9,6 +9,10 @@ import NewFriend from "./NewFriend";
  */
  const FriendContainer = styled.div `
    display: flex;
+   width: 80%;
+   margin: 0 auto;
+   flex-wrap: wrap;
+   justify-content: space-between;
  `
 
 class FriendList extends Component { // eslint-disable-line react/prefer-stateless-function
@@ -17,21 +21,12 @@ class FriendList extends Component { // eslint-disable-line react/prefer-statele
     this.state = {
       friends: [],
       errorMessage: "",
-      spinner: false,
-      name: "",
-      email: "",
-      age: ""
+      spinner: false
     }
   }
 
-  handlechange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    console.log(name, value);
-    this.setState({
-      [name]: value
-    })
-  }
+
+
 
   handleDelete = async(id) => {
     try {
@@ -44,17 +39,6 @@ class FriendList extends Component { // eslint-disable-line react/prefer-statele
     }
   }
 
-  handleAddFriend = (e) => {
-      //e.preventDefault()
-      axios.post("http://localhost:5000/friends/", {
-        name: this.state.name,
-        email: this.state.email,
-        age: this.state.age
-      })
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
-
-  }
 
 /*
 
@@ -96,13 +80,7 @@ class FriendList extends Component { // eslint-disable-line react/prefer-statele
               />
           })
         }
-        <NewFriend
-          handlechange = {this.handlechange}
-          handleAddFriend = {this.handleAddFriend}
-          name = {this.state.name}
-          email = {this.state.email}
-          age = {this.state.age}
-          />
+
       </FriendContainer>
     );
   }
