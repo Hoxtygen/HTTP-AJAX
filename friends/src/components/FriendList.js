@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import axios from "axios";
 import Friend from "./Friend";
+import NewFriend from "./NewFriend";
 
 /**
  * FriendList
@@ -51,6 +52,7 @@ class FriendList extends Component { // eslint-disable-line react/prefer-statele
               />
           })
         }
+        <NewFriend />
       </div>
     );
   }
