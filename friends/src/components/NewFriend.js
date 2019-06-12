@@ -15,7 +15,7 @@ const  NewFriend= (props) => {
           <input type="number" name = "age" placeholder = "Enter your age"/>
         </div>
         <div className = "btn-container">
-          
+          <button type = "submit">Save</button>
         </div>
       </form>
     </div>
