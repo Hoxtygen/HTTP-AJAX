@@ -1,21 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const  NewFriend= (props) => {
+const  NewFriend= ({handlechange, handleAddFriend, name, age, email}) => {
   return (
     <div>
       <form action="">
         <div>
-          <input type="text" name = "name" placeholder = 'Enter your name'/>
+          <input type="text" value = {name} name = "name" placeholder = 'Enter your name' onChange = {handlechange}/>
         </div>
         <div>
-          <input type="email" name = "email" placeholder = "Enter your email"/>
+          <input type="email" value = {email} name = "email" placeholder = "Enter your email" onChange = {handlechange}/>
         </div>
         <div>
-          <input type="number" name = "age" placeholder = "Enter your age"/>
+          <input type="number" value = {age} name = "age" placeholder = "Enter your age" onChange = {handlechange}/>
         </div>
         <div className = "btn-container">
-          <button type = "submit">Save</button>
+          <button onClick = {handleAddFriend} type = "submit">Save</button>
         </div>
       </form>
     </div>
