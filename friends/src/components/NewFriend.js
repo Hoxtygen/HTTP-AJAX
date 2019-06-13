@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
-import PropTypes from 'prop-types'
 import axios from "axios";
 
 
@@ -63,47 +62,21 @@ export class NewFriend extends Component { // eslint-disable-line react/prefer-s
   }
 
   handleAddFriend = (e) => {
-      //e.preventDefault()
+      e.preventDefault()
       axios.post("http://localhost:5000/friends/", {
         name: this.state.name,
         email: this.state.email,
         age: this.state.age
       })
-      .then(res => console.log(res))
+      .then(res =>{
+        this.props.history.push('/');
+        this.props.fetchData();
+      })
       .catch(err => console.log(err))
-      window.location.href = "/"
+
+
 
   }
-
-  // handleUpdateFriend = () => {
-  //   // using setState:
-  //   // 1- update an existing friend (the `state.currentFriendId` tells us which)
-  //   // 2- reset currentFriendId to null
-  //   // 3- reset the form to its initial state
-  //   this.setState(state => ({
-  //     friends: state.friends.map(friend => {
-  //       if (friend.id === state.currentFriendId) {
-  //         friend.name = state.form.nameValue;
-  //         friend.age = state.form.ageValue;
-  //       }
-  //       return friend;
-  //     }),
-  //     form: initialFormState,
-  //     currentFriendId: null,
-  //   }));
-  // }
-
-    // handleUpdateFriend = (id) => {
-    //   const updatedFriend = this.state.friends.map(friend => {
-    //     if (friend.id === state.currentFriendId) {
-    //       friend.name = this.state.name
-    //       friend.email = this.state.email;
-    //       friend.age = this.state.age;
-    //     }
-    //     return friend;
-    //     axios.put(`http://localhost:5000/friends/${id}`)
-    // }
-
 
 
   render() {
