@@ -2,45 +2,6 @@ import React, { Component } from 'react';
 import styled from "styled-components";
 import axios from "axios";
 
-
-const FormWapper = styled.div`
-  border: 1px solid #222;
-  width: 500px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-
-  div {
-    width: 80%;
-    margin: 0 auto;
-  }
-
-  input {
-    width: 100%;
-    padding: 0;
-    height: 48px;
-    box-sizing: border-box;
-    padding: 10px;
-    font-size: 1.1rem;
-    outline: none;
-    margin-bottom: 10px;
-  }
-`
-
-const ButtonContainer = styled.div `
-  display: inline-flex;
-  justify-content: center;
-
-  button {
-    width: 50%;
-    padding: 5px 10px;
-    height: 40px;
-    background: green;
-    color: #fff;
-    font-size: 1rem;
-  }
-`
-
 export class NewFriend extends Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {
     super(props);
@@ -111,8 +72,42 @@ export class NewFriend extends Component { // eslint-disable-line react/prefer-s
   }
 }
 
-// NewFriend.propTypes = {
-//   prop: PropTypes.type.isRequired
-// }
+const FormWapper = styled.div`
+  border: 1px solid #222;
+  width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  div {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  input {
+    width: 100%;
+    padding: 0;
+    height: 48px;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 1.1rem;
+    outline: none;
+    margin-bottom: 10px;
+  }
+`
+
+const ButtonContainer = styled.div `
+  display: inline-flex;
+  justify-content: center;
+
+  button {
+    width: 50%;
+    padding: 5px 10px;
+    height: 40px;
+    background: green;
+    color: #fff;
+    font-size: 1rem;
+  }
+`
 
 export default NewFriend;
